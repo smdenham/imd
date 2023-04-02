@@ -5,7 +5,7 @@ let ypos;
 
 let mode = 1;
 
-let bear = document.getElementById('bear');
+let flower1 = document.getElementById('flower1');
 
 
 function setup() {
@@ -19,11 +19,11 @@ function setup() {
     removeElements();
     //lets manipulate the DOM and make our cat move with the arrow keys
     //create an image element in html
-    let cat = createImg("images/cat.png");
+    let bee = createImg("images/bee.png");
     //select size of image
-    cat.size(200,200);
+    bee.size(200,250);
     // give it an id
-    cat.id('cat');
+    bee.id('bee');
 
     //set the position
     //create arithmatic for x and y position. this lets us read out the position
@@ -32,7 +32,7 @@ function setup() {
 
   
     //position the cat based on the arrow keys
-    cat.position(xpos, ypos);
+    bee.position(xpos, ypos);
 
 
     //controls using arrow keys
@@ -61,16 +61,31 @@ function setup() {
         //minus 5 in the x direction means left
         x-=5;
       }
-
+    }
+//flower 1
       if ((xpos>800 && xpos<1100) && (ypos>600 && ypos<900)){
         //make bear appear
-        bear.style.display='block';
+        flower1.style.display='block';
       }
 
       if ((xpos<400) && (ypos<400)){
 
         //hide bear again
-        bear.style.display='none';
+        flower1.style.display='none';
+
+        //change scene to the next to the next one by adding 1
+        mode ++;
+      }
+//flower 2
+      if ((xpos>800 && xpos<1100) && (ypos>600 && ypos<900)){
+        //make bear appear
+        flower2.style.display='block';
+      }
+
+      if ((xpos<800) && (ypos<400)){
+
+        //hide bear again
+        flower2.style.display='none';
 
         //change scene to the next to the next one by adding 1
         mode ++;
@@ -79,11 +94,50 @@ function setup() {
       //changing of scenes
       if (mode == 2){
         background(0);
-        bear.style.display='none';
+        flower2.style.display='none';
       }
+//flower 3
+    if ((xpos>800 && xpos<1100) && (ypos>600 && ypos<900)){
+      //make flower3 appear
+      flower3.style.display='block';
+    }
+
+    if ((xpos<1000) && (ypos<400)){
+
+      //hide flower3 again
+      flower3.style.display='none';
+
+      //change scene to the next to the next one by adding 1
+      mode ++;
+    }
+
+//changing of scenes
+  if (mode == 2){
+    background(0);
+    flower3.style.display='none';
+  }
+//flower 4
+  if ((xpos>800 && xpos<1100) && (ypos>600 && ypos<900)){
+    //make flower3 appear
+    flower4.style.display='block';
+  }
+
+if ((xpos<1500) && (ypos<400)){
+
+  //hide flower3 again
+  flower4.style.display='none';
+
+  //change scene to the next to the next one by adding 1
+  mode ++;
+}
+
+//changing of scenes
+if (mode == 2){
+  background(0);
+  flower4.style.display='none';
+}
     }
     // console.log("cat is at: " + xpos + ", " + ypos);
-  }
   
   function windowResized() {
     // resize the canvas when the screen is resized.

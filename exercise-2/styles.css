@@ -1,6 +1,4 @@
 body{
-    /* background-color: black; */
-    color: black;
     margin: 0;
 }
 
@@ -9,6 +7,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
 }
 
 .offer{
@@ -18,7 +17,21 @@ body{
     left: 800;
 }
 
-#bear{
+#flower1{
     display: none;
     z-index: 2;
+}
+#flower2{
+    display: none;
+    z-index: 2;
+}
+#flower3{
+    display: none;
+    z-index: 2;
+    justify-items: right;
+}
+#flower4{
+    display: none;
+    z-index: 2;
+    justify-items: right;
 }
