@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+/* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
+#html-body{
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    justify-items: center;
+}
+#name-input{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 20%;
+    margin: auto;
+}
+
+#next{
+    color: black;
+}
+
+#atag{
+    font-size: xx-large;
+    text-decoration: none;
+}
+
