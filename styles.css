@@ -2,27 +2,41 @@ body{
     background-color: white;
 }
 
-#fix{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    z-index: 0;
+p{
+    font-size: xx-large;
 }
 
 a{
     color: black;
-    font-size: 70px;
+    font-size: x-large;
     text-decoration: none;
-    padding-top: 400px;
 }
 
 #center{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto, auto;
+    display: flex;
     justify-content: center;
     justify-items: center;
 }
 button{
-    font-size: xx-large;
+    padding: 0;
+    font-size: x-large;
+}
+
+/* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
+#my-day{
+    position: relative;
+    top: -600px;
+    left: 100px;
+}
+
+#fix{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#html-body{
+    position: absolute;
+    top: 0;
+    left: 0;
 }

@@ -21,6 +21,7 @@ function setup() {
   enter.mousePressed(add);
 
   background(0);
+  
 
 }
 
@@ -67,8 +68,6 @@ function glyph(){
     spacex = 0;
     spacey += 200;
   }
-
-
 
 }
 
