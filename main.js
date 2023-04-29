@@ -1,6 +1,3 @@
-let body = document.getElementById('html-body');
-
-
 function setup() {
   // make the div called "mySketch" a p5.js canvas element
   let cnv = createCanvas(windowWidth, windowHeight);
@@ -9,7 +6,6 @@ function setup() {
 }
 
 function draw() {
-
 
 }
 

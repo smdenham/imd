@@ -1,3 +1,5 @@
+let body = document.getElementById('html-body');
+
 function setup() {
     let cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent('mySketch');

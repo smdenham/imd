@@ -1,13 +1,20 @@
 let days = [];
 
+let bg;
+
 let weather, mood, desire;
 
 let enter, entered;
 
 let body = document.getElementById('html-body');
 
+
 let spacex = 0;
 let spacey = 0;
+
+function preload(){
+ bg = loadImage('img/reply.png');
+}
 
 function setup() {
   // make the div called "mySketch" a p5.js canvas element
@@ -18,9 +25,9 @@ function setup() {
   enter.id('enter')
   entered = document.getElementById('enter');
   body.appendChild(entered);
-  enter.mousePressed(add);
+  enter.mousePressed(addData);
 
-  background(0);
+  image(bg, 0,0, width, height);
   
 
 }
@@ -39,20 +46,26 @@ function windowResized() {
 }
 
 function glyph(){
+image(bg, 0,0, width, height);
   if (weather == "sunny"){
     fill(235, 219, 52)
+    console.log('working');
   } else if ( weather == "gloomy"){
     fill(64, 59, 156)
   }
   noStroke();
-  rect(350+spacex, 400+spacey, 100, 100)
+  rect(400+spacex, 400+spacey, 100, 100)
   if (mood == 'happy'){
     fill(255, 0, 247)
   } else if (mood == 'sad'){
     fill(31, 96, 181)
+  } else if (mood == 'mad'){
+    fill(255, 0, 0)
+  } else if (mood == 'tired'){
+    fill(185, 235, 255)
   }
   noStroke();
-  ellipse(300+spacex, 400+spacey, 100, 100)
+  ellipse(450+spacex, 400+spacey, 100, 100)
   if(desire == "hug"){
     stroke(87, 112, 250)
   }else if (desire == "sleep"){
@@ -61,17 +74,22 @@ function glyph(){
     stroke(25, 97, 17)
   }
   strokeWeight(10);
-  line(250+spacex, 300+spacey, 450+spacex, 500+spacey)
+  line(350+spacex, 400+spacey, 550+spacex, 550+spacey)
   
-  spacex += 200;
-  if(spacex > 1000){
-    spacex = 0;
-    spacey += 200;
+  // spacex += 200;
+  // if(spacex > 1000){
+  //   spacex = 0;
+  //   spacey += 200;
+  // }
+
+  if(element.length == 1){
+    console.log('working')
+    element[0].remove;
   }
 
 }
 
-function add() {
+function addData() {
   days.push({
     date: Date(),
     weather: weather,
@@ -81,5 +99,15 @@ function add() {
   console.log(days);
   console.log("day submitted")
 
+  // removeImg();
   glyph();
 }
+
+// function removeImg(){
+//   //if there is an image, remove it before making a new one
+//   if(element.length == 3){
+//     //the first image in the array, remove it
+//     // for(){}
+//     // element[0].remove();
+//   }
+// }
