@@ -1,6 +1,6 @@
 let days = [];
 
-let bg;
+let bg, flower1, flower2, flower3, flower4, flower5, flower6, flower7, flower8, flower9, flower10, flower11, flower12, flower13;
 
 let weather, mood, desire;
 
@@ -9,11 +9,21 @@ let enter, entered;
 let body = document.getElementById('html-body');
 
 
-let spacex = 0;
-let spacey = 0;
-
 function preload(){
  bg = loadImage('img/reply.png');
+ flower1 = loadImage('img/SUNNY.png');
+ flower2 = loadImage('img/GLOOMY.png');
+ flower3 = loadImage('img/RAINY.png');
+ flower4 = loadImage('img/HAPPY.png');
+ flower5 = loadImage('img/SAD.png');
+ flower6 = loadImage('img/MAD.png');
+ flower7 = loadImage('img/TIRED.png');
+ flower8 = loadImage('img/ANXIOUS.png');
+ flower9 = loadImage('img/HUG.png');
+ flower10 = loadImage('img/SLEEP.png');
+ flower11 = loadImage('img/NATURE.png');
+ flower12 = loadImage('img/SNACK.png');
+ flower13 = loadImage('img/FRIEND.png');
 }
 
 function setup() {
@@ -28,59 +38,66 @@ function setup() {
   enter.mousePressed(addData);
 
   image(bg, 0,0, width, height);
-  
 
 }
 
 function draw() {
-
   weather = document.getElementById('weather').value;
   mood = document.getElementById('mood').value;
   desire = document.getElementById('desire').value;
-
 }
 
-function windowResized() {
-  // resize the canvas when the screen is resized.
-  resizeCanvas(windowWidth, windowHeight);
-}
 
 function glyph(){
 image(bg, 0,0, width, height);
   if (weather == "sunny"){
-    fill(235, 219, 52)
+    image(flower1,200, 550)
+    save(flower1, "SUNNY.png")
     console.log('working');
-  } else if ( weather == "gloomy"){
-    fill(64, 59, 156)
+  } else if ( weather == "cloudy"){
+    image(flower2,200, 550)
+    save(flower2, "CLOUDY.png")
+  } else if ( weather == "rainy"){
+    image(flower3,200, 550)
+    save(flower3, "RAINY.png")
   }
-  noStroke();
-  rect(400+spacex, 400+spacey, 100, 100)
-  if (mood == 'happy'){
-    fill(255, 0, 247)
-  } else if (mood == 'sad'){
-    fill(31, 96, 181)
-  } else if (mood == 'mad'){
-    fill(255, 0, 0)
-  } else if (mood == 'tired'){
-    fill(185, 235, 255)
-  }
-  noStroke();
-  ellipse(450+spacex, 400+spacey, 100, 100)
-  if(desire == "hug"){
-    stroke(87, 112, 250)
-  }else if (desire == "sleep"){
-    stroke(17, 6, 145)
-  } else if(desire =="nature"){
-    stroke(25, 97, 17)
-  }
-  strokeWeight(10);
-  line(350+spacex, 400+spacey, 550+spacex, 550+spacey)
   
-  // spacex += 200;
-  // if(spacex > 1000){
-  //   spacex = 0;
-  //   spacey += 200;
-  // }
+
+  if (mood == 'happy'){
+    image(flower4,300, 550)
+    save(flower4, "HAPPY.png")
+  } else if (mood == 'sad'){
+    image(flower5,300, 550)
+    save(flower5, "SAD.png")
+  } else if (mood == 'mad'){
+    image(flower6,300, 550)
+    save(flower6, "MAD.png")
+  } else if (mood == 'tired'){
+    image(flower7,300, 550)
+    save(flower7, "TIRED.png")
+  } else if (mood == 'anxious'){
+    image(flower8,300, 550)
+    save(flower8, "ANXIOUS.png")
+  }
+ 
+
+  if(desire == "hug"){
+    image(flower9,400, 550)
+    save(flower9, "HUG.png")
+  }else if (desire == "sleep"){
+    image(flower10,400, 550)
+    save(flower10, "SLEEP.png")
+  } else if(desire =="nature"){
+    image(flower11,400, 550)
+    save(flower11, "NATURE.png")
+  } else if(desire =="snack"){
+    image(flower12,400, 550)
+    save(flower12, "SNACK.png")
+  } else if(desire =="friend"){
+    image(flower13,400, 550)
+   save(flower13, "FRIEND.png")
+  }
+ 
 
   if(element.length == 1){
     console.log('working')
@@ -88,6 +105,7 @@ image(bg, 0,0, width, height);
   }
 
 }
+
 
 function addData() {
   days.push({
@@ -99,15 +117,5 @@ function addData() {
   console.log(days);
   console.log("day submitted")
 
-  // removeImg();
   glyph();
 }
-
-// function removeImg(){
-//   //if there is an image, remove it before making a new one
-//   if(element.length == 3){
-//     //the first image in the array, remove it
-//     // for(){}
-//     // element[0].remove();
-//   }
-// }

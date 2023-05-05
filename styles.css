@@ -16,22 +16,25 @@ a{
     display: flex;
     justify-content: center;
     justify-items: center;
-    padding-top: 100px;
+}
+
+#right{
+    position: absolute;
+    top: 300px;
+    right: -1300px;
 }
 
 #flex{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
+    position: absolute;
+    top: -100px;
+    left: -80px;
 }
-
-#mid{
-    padding-top: 30%;
-    padding-left: 30px;
+img.fade{
+    width: 100%;
+    height: auto;
 }
-
 img.fade:hover{
-    opacity: 0.5;
+   opacity: 0.5;
 }
 button{
     padding: 0;
@@ -41,17 +44,8 @@ button{
 /* This allows you to be able to position html elements starting from the top left instead of displaying as block under p5.js canvas */
 
 
-#fix{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 #html-body{
     position: absolute;
     top: 100px;
     left: 100px;
-}
-
-#mySketch{
 }

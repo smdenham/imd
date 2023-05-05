@@ -8,30 +8,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="styles.css" rel="stylesheet">
         <script src="p5/p5.js""></script>
+        <script src="p5/addons/p5.sound.js""></script>
     </head>
     <body>
         <div id="mySketch"></div>
-            <div id="fix">
-                <!-- <img src="img/reply.png"> -->
-            </div>
             <div id="html-body">
                 <form id="my-day">
+                    <a href="index.html"> <img src="img/back.png" width="90px"> </a>
                     <p>Hello Friend,</p>
                     <p>Today was <select name="weather" id="weather">
                         <option value="sunny">sunny</option>
-                        <option value="gloomy">gloomy</option>
+                        <option value="cloudy">cloudy</option>
+                        <option value="rainy">rainy</option>
                     </select>.</p>
                     <p>I felt <select name="mood" id="mood">
                         <option value="happy">happy</option>
                         <option value="sad">sad</option>
                         <option value="mad">mad</option>
                         <option value="tired">tired</option>
+                        <option value="anxious">anxious</option>
                     </select> in the morning.</p>
                     <p>At the end of the day </p>
                     <p>I needed <select name="desire" id="desire">
                         <option value="hug">a hug</option>
                         <option value="sleep">to sleep</option>
                         <option value="nature">to be in nature</option>
+                        <option value="snack">to eat a snack</option>
+                        <option value="friend">to see a friend</option>
                     </select>.</p>
                 </form>
             </div>
